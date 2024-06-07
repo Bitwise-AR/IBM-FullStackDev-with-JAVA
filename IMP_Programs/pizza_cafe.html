@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pizza Paradise Cafe</title>
+</head>
+
+<body>
+    <h1>Welcome to Pizza Paradise Cafe</h1>
+    <p>Your go-to place for the most delicious and authentic pizzas in town!</p>
+
+    <h2>Our Menu</h2>
+    <h3>Pizzas</h3>
+    <ul>
+        <li>Margherita - $12.00</li>
+        <li>Pepperoni - $14.00</li>
+        <li>BBQ Chicken - $15.00</li>
+        <li>Veggie Delight - $13.00</li>
+        <li>Hawaiian - $14.00</li>
+    </ul>
+
+    <h3>Appetizers</h3>
+    <ul>
+        <li>Garlic Bread - $5.00</li>
+        <li>Mozzarella Sticks - $7.00</li>
+        <li>Bruschetta - $6.00</li>
+        <li>Caesar Salad - $8.00</li>
+    </ul>
+
+    <h3>Beverages</h3>
+    <ul>
+        <li>Soda - $2.00</li>
+        <li>Iced Tea - $2.50</li>
+        <li>Beer - $4.00</li>
+        <li>Wine - $5.00</li>
+    </ul>
+
+    <h2>Special Offers</h2>
+    <p>Buy any large pizza and get a free soda!</p>
+    <p>Happy Hour: 4 PM - 6 PM - 50% off all appetizers!</p>
+
+    <h2>Order Online</h2>
+    <form action="/submit_order" method="post">
+        <label for="pizza">Choose your pizza:</label><br>
+        <select id="pizza" name="pizza">
+            <option value="margherita">Margherita</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="bbq_chicken">BBQ Chicken</option>
+            <option value="veggie_delight">Veggie Delight</option>
+            <option value="hawaiian">Hawaiian</option>
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" max="10"><br><br>
+
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="address">Delivery Address:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <input type="submit" value="Place Order">
+    </form>
+
+    <h2>Find Us</h2>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <h2>Contact Us</h2>
+    <p>Phone: (123) 456-7890</p>
+    <p>Email: contact@pizzaparadise.com</p>
+    <p>Address: 123 Pizza St, Flavor Town, USA</p>
+
+    <h2>Newsletter Signup</h2>
+    <form action="/subscribe" method="post">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Subscribe">
+    </form>
+
+    <h2>Opening Hours</h2>
+    <p>Monday - Friday: 11 AM - 10 PM</p>
+    <p>Saturday - Sunday: 12 PM - 11 PM</p>
+
+    <!-- Adding a simple map using an iframe -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0862455702267!2d-122.42184248468129!3d37.77902777975874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5d7a4bbd%3A0x77bb94a833470759!2s123%20Pizza%20St%2C%20Flavor%20Town%2C%20USA!5e0!3m2!1sen!2s!4v1622733062390!5m2!1sen!2s"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</body>
+
+</html>

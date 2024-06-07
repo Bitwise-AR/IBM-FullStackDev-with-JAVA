@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <form action="/update_cart" method="post">
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Product 1</td>
+                <td><input type="number" name="quantity1" value="1" min="1"></td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>Product 2</td>
+                <td><input type="number" name="quantity2" value="1" min="1"></td>
+                <td>$20.00</td>
+            </tr>
+            <tr>
+                <td>Product 3</td>
+                <td><input type="number" name="quantity3" value="1" min="1"></td>
+                <td>$30.00</td>
+            </tr>
+        </table><br>
+        <input type="submit" value="Update Cart">
+    </form>
+    <form action="/checkout" method="post">
+        <input type="submit" value="Checkout">
+    </form>
+</body>
+</html>
