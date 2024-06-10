@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+</head>
+<body>
+    <header>
+        <h1>Travel Agency</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('destinations')">Destinations</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="home" style="display: block;">
+            <h2>Welcome to our Travel Agency!</h2>
+            <p>Explore amazing destinations and plan your next adventure with us.</p>
+        </div>
+
+        <div id="destinations" style="display: none;">
+            <h2>Our Destinations</h2>
+            <ul>
+                <li>Paris</li>
+                <li>Tokyo</li>
+                <li>New York</li>
+            </ul>
+        </div>
+
+        <div id="contact" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>Email: info@travelagency.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Travel Agency</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('main > div');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

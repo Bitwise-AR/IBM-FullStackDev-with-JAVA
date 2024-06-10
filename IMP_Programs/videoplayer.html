@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+</head>
+
+<body>
+    <h2>Video Player</h2>
+    <video id="myVideo" width="640" height="360" controls>
+        <source src="https://www.youtube.com/watch?v=H5v3kku4y6Q" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <br>
+    Playback Speed:
+    <input type="range" min="0.5" max="2" step="0.1" value="1" onchange="setSpeed(this.value)">
+
+    <script>
+        var myVideo = document.getElementById("myVideo");
+
+        function playPause() {
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+
+        function makeBig() {
+            myVideo.width = 800;
+        }
+
+        function makeSmall() {
+            myVideo.width = 320;
+        }
+
+        function setSpeed(speed) {
+            myVideo.playbackRate = speed;
+        }
+    </script>
+</body>
+
+</html>

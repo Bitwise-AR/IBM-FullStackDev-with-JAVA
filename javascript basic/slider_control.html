@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Control</title>
+</head>
+
+<body>
+    <h2>Slider Control</h2>
+    <input type="range" id="slider" min="0" max="100" value="50" oninput="updateValue(this.value)">
+    <p id="sliderValue">Value: 50</p>
+
+    <script>
+        function updateValue(value) {
+            document.getElementById("sliderValue").textContent = "Value: " + value;
+        }
+    </script>
+</body>
+
+</html>
