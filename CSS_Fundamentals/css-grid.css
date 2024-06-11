@@ -1,0 +1,22 @@
+#outer {
+    width: 90%;
+    height: 90%;
+
+    display: grid;
+    grid-template-rows: 10px 20px 30px;
+    grid-template-columns: 10px 20px 30px;
+    /* 
+    1fr 1fr
+    repeat(5, 1fr)
+    50px auto 100px 1fr 
+    */
+
+    grid-template-columns: 40px 30px auto 40px;
+    row-gap: 20px;
+    column-gap: 5px;
+    justify-content: end;
+}
+
+.inner {
+    border: 2px solid black;
+}

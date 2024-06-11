@@ -1,0 +1,87 @@
+
+<!-- There are different things which may confuse you. Do ask in the next lecture -->
+<!-- Make a list of things or words which you don't understand. -->
+<!-- In this HTML file, notice the use of practices of clean coding  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types</title>
+</head>
+<body>
+    <h1>Input Types Example</h1>
+    
+    <form action="#" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="150" required><br><br>
+        
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        
+        <label for="subscribe">Subscribe to Newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe"><br><br>
+        
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+        
+        <label for="favoriteColor">Favorite Color:</label>
+        <input type="color" id="favoriteColor" name="favoriteColor"><br><br>
+        
+        <label for="birthDate">Date of Birth:</label>
+        <input type="date" id="birthDate" name="birthDate"><br><br>
+        
+        <label for="eventDateTime">Event Date and Time:</label>
+        <input type="datetime-local" id="eventDateTime" name="eventDateTime"><br><br>
+        
+        <label for="eventTime">Event Time:</label>
+        <input type="time" id="eventTime" name="eventTime"><br><br>
+        
+        <label for="fileUpload">Upload File:</label>
+        <input type="file" id="fileUpload" name="fileUpload"><br><br>
+        
+        <label for="country">Select Country:</label>
+        <select id="country" name="country">
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        
+        <label for="fruit">Select Fruit:</label>
+        <select id="fruit" name="fruit">
+            <optgroup label="Citrus Fruits">
+                <option value="orange">Orange</option>
+                <option value="lemon">Lemon</option>
+                <option value="lime">Lime</option>
+            </optgroup>
+            <optgroup label="Berry Fruits">
+                <option value="strawberry">Strawberry</option>
+                <option value="blueberry">Blueberry</option>
+                <option value="raspberry">Raspberry</option>
+            </optgroup>
+        </select><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
