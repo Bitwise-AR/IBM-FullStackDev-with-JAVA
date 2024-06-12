@@ -1,0 +1,26 @@
+#container {
+  /* for 2D structure */
+  /* shortcut ctrl + /  */
+  display: grid;
+  /* grid-template-rows: 150px 150px 150px; */
+  grid-template-rows: repeat(3, 250px);
+  grid-template-columns: repeat(3, 250px);
+  /* the catual size if image is bigger so it is overlapping */
+  gap: 10px;
+  /* both row and cilumn will get 10px gap  */
+  row-gap: 30px;
+  border: 2px solid blue;
+  /* justify-content: space-around;  */
+  justify-content: center;
+  /* horizpntal */
+  align-content: space-around;
+  /* vertical  */
+}
+
+.inner {
+  border: 2px solid black;
+  /* background-color: green; */
+  background-color: red;
+  display: grid;
+  justify-content: center;
+}
