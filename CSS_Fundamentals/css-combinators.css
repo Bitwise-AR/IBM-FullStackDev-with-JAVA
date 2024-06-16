@@ -1,0 +1,27 @@
+/* it will child, grand child, great grand child and so on  */
+/* h2 has 1 specificity */
+#outer h2 {
+  background-color: orange;
+}
+
+/* it will take only child elements  */
+div > h2,
+div > p {
+  background-color: red;
+}
+
+/* it will select immediate sibilng of that element */
+h2 + div {
+  background-color: green;
+}
+/* h2
+div - > wil be selected
+div */
+
+h2 ~ div {
+  background-color: palevioletred;
+}
+/* 
+h2
+div  - > wil be selected
+div - > wil be selected */

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Marks Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Marks Percentage Calculator</h2>
+        <label for="obtained-marks">Obtained Marks:</label>
+        <input type="number" id="obtained-marks" placeholder="Enter obtained marks">
+
+        <label for="total-marks">Total Marks:</label>
+        <input type="number" id="total-marks" placeholder="Enter total marks">
+
+        <button onclick="calculatePercentage()">Calculate</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculatePercentage() {
+            const obtainedMarks = parseFloat(document.getElementById('obtained-marks').value);
+            const totalMarks = parseFloat(document.getElementById('total-marks').value);
+            if (isNaN(obtainedMarks) || isNaN(totalMarks) || totalMarks === 0) {
+                document.getElementById('result').textContent = 'Please enter valid numbers and ensure total marks are not zero';
+                return;
+            }
+            const percentage = (obtainedMarks / totalMarks) * 100;
+            document.getElementById('result').textContent = `Percentage: ${percentage.toFixed(2)}%`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin: 5px 0 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .reservation-summary {
+            margin-top: 20px;
+        }
+
+        .reservation-summary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hotel Reservation</h1>
+        <form id="reservationForm">
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" required>
+                <option value="" disabled selected>Select your room</option>
+                <option value="single">Single - $100/night</option>
+                <option value="double">Double - $150/night</option>
+                <option value="suite">Suite - $200/night</option>
+            </select>
+            <label for="checkInDate">Check-In Date:</label>
+            <input type="date" id="checkInDate" required>
+            <label for="checkOutDate">Check-Out Date:</label>
+            <input type="date" id="checkOutDate" required>
+            <button type="button" onclick="makeReservation()">Reserve</button>
+        </form>
+        <div class="reservation-summary" id="reservationSummary">
+            <h2>Reservation Summary</h2>
+            <ul id="reservationList"></ul>
+            <p>Total: $<span id="totalAmount">0</span></p>
+        </div>
+    </div>
+    <script>
+        const roomPrices = {
+            single: 100,
+            double: 150,
+            suite: 200
+        };
+
+        function calculateDays(checkIn, checkOut) {
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+            const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+            return daysDifference;
+        }
+
+        function makeReservation() {
+            const roomTypeSelect = document.getElementById('roomType');
+            const checkInDateInput = document.getElementById('checkInDate');
+            const checkOutDateInput = document.getElementById('checkOutDate');
+            const reservationList = document.getElementById('reservationList');
+            const totalAmountSpan = document.getElementById('totalAmount');
+
+            const selectedRoomType = roomTypeSelect.value;
+            const checkInDate = checkInDateInput.value;
+            const checkOutDate = checkOutDateInput.value;
+
+            if (!selectedRoomType || !checkInDate || !checkOutDate) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const days = calculateDays(checkInDate, checkOutDate);
+            if (days <= 0) {
+                alert("Check-out date must be after check-in date.");
+                return;
+            }
+
+            const pricePerNight = roomPrices[selectedRoomType];
+            const totalPrice = pricePerNight * days;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${selectedRoomType.charAt(0).toUpperCase() + selectedRoomType.slice(1)} room from ${checkInDate} to ${checkOutDate} - $${totalPrice}`;
+            reservationList.appendChild(listItem);
+
+            const currentTotal = parseInt(totalAmountSpan.textContent);
+            totalAmountSpan.textContent = currentTotal + totalPrice;
+        }
+    </script>
+</body>
+
+</html>
