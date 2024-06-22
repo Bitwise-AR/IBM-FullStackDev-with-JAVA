@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increasing/Decreasing DIV heights</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv"> This is a div </div>
+    <button onclick="increaseHeight()">Increase Height</button>
+    <button onclick="decreaseHeight()">Decrease Height</button>
+
+    <script>
+        function increaseHeight() {
+            let div = document.getElementById('myDiv');
+            let currentHeight = parseInt(window.getComputedStyle(div).height);
+        }
+    </script>
+</body>
+</html>

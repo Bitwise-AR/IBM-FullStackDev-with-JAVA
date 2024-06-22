@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Display a photograph </title>
+    <style>
+        #uploadedImage {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload and Dispaly photo</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <img id="uploadedImage" alt="Uploaded Image">
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file){
+                const reader= new FileReader();
+                reader.onload =function(e) {
+                    const img = document .getE1ementById('uploadedlmage');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+            reader.readAsDataURL(file) ;
+            }
+        })
+    </script>
+</body>
+</html>

@@ -30,7 +30,7 @@ if (x === "20") console.log(x + " in if part");
 else console.log(x + " in else");
 
 // =
-// ==  - comparing with out data type
+// ==  - comparing without data type
 // != - not equal to without data type
 // === - comparing with data type
 // !=== means not equal with data types

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: crosshair;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Income Tax Calculator</h2>
+    <label for="income">Enter your taxable income:</label>
+    <input type="number" id="income" min="0" step="1000">
+    <button onclick="calculateTax()">Calculate Tax</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('income').value);
+            const resultDiv = document.getElementById('result');
+
+            let tax = 0;
+            if (isNaN(income) || income < 0) {
+                resultDiv.textContent = 'Please enter a valid income. '
+                return;
+            }
+            
+
+            if (income >= 300000 && income < 600000) {
+                tax = income * 0.05; // 10% tax rate
+            } else if (income >= 600000 && income < 900000) {
+                tax = income * 0.1; // 10% on first 10000, 20% on the rest up to 50000
+            } else if (income >= 900000 && income < 1200000) {
+                tax = income * 0.15;
+            } else if (income >= 1200000 && income < 1500000) {
+                tax = income * 0.20;
+            } else if (income >= 1500000) {
+                tax = income * 0.30;
+            } else {
+                tax = 0;
+            }
+            
+            if(tax==0){
+                resultDiv.textContent = 'Tax is exempted for you. ';
+            } else {
+                resultDiv.innerText = `Income Tax: ₹${tax.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
