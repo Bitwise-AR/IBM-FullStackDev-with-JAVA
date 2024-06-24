@@ -74,11 +74,12 @@
                 tax = 0;
             }
             
-            if(tax==0){
+            if(tax == 0){
                 resultDiv.textContent = 'Tax is exempted for you. ';
-            } else {
-                resultDiv.innerText = `Income Tax: ₹${tax.toFixed(2)}`;
-            }
+            } 
+            
+            resultDiv.innerText = `Income Tax: ₹${tax.toFixed(2)}`;
+            
         }
     </script>
 </body>
