@@ -1,0 +1,18 @@
+#mydiv {
+  border: 3px solid black;
+  background-color: red;
+  width: 40%;
+  height: 450px;
+  text-align: center;
+}
+
+.uimage {
+  width: 50%;
+  height: 50%;
+}
+
+#card {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
